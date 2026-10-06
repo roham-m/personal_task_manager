@@ -1,8 +1,24 @@
-from tasks import tasks
+import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+admin_password = os.getenv("task_manager_ADMIN_PASSWORD")
+
+open_admin = input("do u want to open admin mode?   yes/no:  ")
+
+if open_admin.lower() == "yes":
+    entered_password = input("enter admin password:  ")
+    if entered_password == admin_password:
+        print("admin! hi...")
+    else:
+        print("wrong password")
 
 print("welcome to the personal_task_manager")
 
 name = input("please enter your name: ")
+
+tasks = []
 
 while True:
     task = input(f"Hi {name}, please enter your task: ")
@@ -12,6 +28,16 @@ while True:
 
     if add_tasks == "n":
         break
+
+file = open("tasks.txt", "a")
+
+file.write(f"{name} tasks:\n")
+
+for task in tasks:
+    file.write(task + "\n")
+
+file.write("\n")
+file.close()
 
 print(f"\n{name} tasks:")
 
