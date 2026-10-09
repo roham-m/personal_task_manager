@@ -22,9 +22,19 @@ tasks = []
 
 while True:
     task = input(f"Hi {name}, please enter your task: ")
-    tasks.append(task)
 
-    add_tasks = input("Do you want to add another task: (y/n) ")
+    difficulty = input("Is this task low, medium, or hard? ").lower()
+
+    while difficulty not in ["low", "medium", "hard"]:
+        difficulty = input("Please enter low, medium, or hard: ").lower()
+
+    tasks.append(f"{task} ({difficulty})")
+
+    add_tasks = input("Do you want to add another task? (y/n): ").lower()
+
+    while add_tasks != "y" and add_tasks != "n":
+        print("Invalid input!")
+        add_tasks = input("Do you want to add another task? (y/n): ").lower()
 
     if add_tasks == "n":
         break

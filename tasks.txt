@@ -6,3 +6,16 @@ roham tasks:
 i want go to see my grandma in park
 i want go store with my grandpa
 
+g tasks:
+g
+g
+g
+
+roham tasks:
+i (low)
+g (hard)
+
+roham tasks:
+r (low)
+g (medium)
+
