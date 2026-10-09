@@ -23,7 +23,7 @@ tasks = []
 while True:
     task = input(f"Hi {name}, please enter your task: ")
 
-    difficulty = input("Is this task low, medium, or hard? ").lower()
+    difficulty = input("What is the value of this task? (low, medium, or hard) ").lower()
 
     while difficulty not in ["low", "medium", "hard"]:
         difficulty = input("Please enter low, medium, or hard: ").lower()
